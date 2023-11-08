@@ -1,0 +1,12 @@
+name: 'Spellcheck Action'
+description: 'Perform spellcheck on the repository'
+inputs:
+  path:
+    description: 'Path to the files to spellcheck'
+    required: true
+    default: '.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    GITHUB_TOKEN: ${{ secrets.TOKEN }}
