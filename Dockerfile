@@ -15,3 +15,9 @@ EXPOSE 80
 
 # Run cspell when the container launches
 CMD ["cspell", "**/*"]
+
+# Copy the entrypoint script into the Docker image
+COPY entrypoint.sh /entrypoint.sh
+
+# Make the entrypoint script executable
+RUN chmod +x /entrypoint.sh
